@@ -1,44 +1,17 @@
 from graphics import *
+from cell import Cell
 
 def main():
     win = Window(800, 600)
-    s_line_1 = Line(Point(100,100), Point(150,100))
-    s_line_2 = Line(Point(100,100), Point(100,150))
-    s_line_3 = Line(Point(100,150), Point(150,150))
-    s_line_4 = Line(Point(150,150), Point(150,200))
-    s_line_5 = Line(Point(150,200), Point(100,200))
-    win.draw_line(s_line_1, "blue")
-    win.draw_line(s_line_2, "blue")
-    win.draw_line(s_line_3, "blue")
-    win.draw_line(s_line_4, "blue")
-    win.draw_line(s_line_5, "blue")
 
-    w_line_1 = Line(Point(175, 100), Point(225, 200))
-    w_line_2 = Line(Point(225, 200), Point(250, 150))
-    w_line_3 = Line(Point(250, 150), Point(275, 200))
-    w_line_4 = Line(Point(275, 200), Point(325, 100))
-    win.draw_line(w_line_1, "red")
-    win.draw_line(w_line_2, "red")
-    win.draw_line(w_line_3, "red")
-    win.draw_line(w_line_4, "red")
+    c = Cell(win)
+    c.has_bottom_wall = False
+    c.draw(250, 100, 500, 250)
 
-    a_line_1 = Line(Point(375, 100), Point(325, 200))
-    a_line_2 = Line(Point(375, 100), Point(425, 200))
-    a_line_3 = Line(Point(350, 150), Point(400, 150))
-    win.draw_line(a_line_1, fill_color="green")
-    win.draw_line(a_line_2, fill_color="green")
-    win.draw_line(a_line_3, fill_color="green")
+    c = Cell(win)
+    c.has_top_wall = False
+    c.draw(150, 200, 300, 250)
 
-    g_line_1 = Line(Point(450, 100), Point(450, 200)) 
-    g_line_2 = Line(Point(450, 100), Point(550, 100)) 
-    g_line_3 = Line(Point(450, 200), Point(550, 200)) 
-    g_line_4 = Line(Point(550, 200), Point(550, 150))
-    g_line_5 = Line(Point(550, 150), Point(500, 150))
-    win.draw_line(g_line_1, fill_color="purple")
-    win.draw_line(g_line_2, fill_color="purple")
-    win.draw_line(g_line_3, fill_color="purple")
-    win.draw_line(g_line_4, fill_color="purple")
-    win.draw_line(g_line_5, fill_color="purple")
     win.wait_for_close()
 
 main()

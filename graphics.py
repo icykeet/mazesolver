@@ -1,5 +1,4 @@
 from tkinter import Tk, BOTH, Canvas
-from typing import Any
 
 class Window():
     def __init__(self, height, width):
